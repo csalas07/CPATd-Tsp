@@ -18,7 +18,7 @@
 /// <summary>
 /// Enum para el arreglo de las LCS.
 /// en = habilitado, 0 = No habilitado, 1 = Habilitado.
-/// set = usado, 0 = No listo, 1 = Listo.
+/// set = usado, 0 = No listo, 1 = Listo. 
 /// </summary>
 enum lcs {
 	en,
