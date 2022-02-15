@@ -18,7 +18,7 @@
 /// <summary>
 /// Enum para el arreglo de las LCS.
 /// en = habilitado, 0 = No habilitado, 1 = Habilitado.
-/// set = usado, 0 = No listo, 1 = Listo. 
+/// set = usado, 0 = No listo, 1 = Listo.
 /// </summary>
 enum lcs {
 	en,
@@ -49,14 +49,14 @@ float CtsTxt;
 
 #pragma region Variables para TDTSP
 int idxC;
-float distance, t, ArT, OldArt, vSpeed, *cTot;
+float distance, t, ArT, OldArt, vSpeed, * cTot;
 #pragma endregion
 
 #pragma region Variables y Matrices para GRASP
-float **lc;
-float *beta;
-int **perms;
-int ***records; //3D para el registro de la memoria compartida 
+float** lc;
+float* beta;
+int** perms;
+int*** records; //3D para el registro de la memoria compartida 
 #pragma endregion
 
 #pragma region Variables y Matrices para PCELL
@@ -134,7 +134,7 @@ int main() {
 			GRASP(&perms[0], &lc); //Generar una permutación con GRASP
 			printf("Ctot  %f\n", cTot[0]);
 			ov = CalcOv(perms[0]);	//Calculo de la funcion objetivo
-			if (ov < bestOv){
+			if (ov < bestOv) {
 				bestOv = ov;
 				iterSinMejora = 10;
 			}
@@ -156,7 +156,7 @@ int main() {
 
 #pragma region Lista de Funciones
 
-void GRASP(int **perms, float ***lc) {
+void GRASP(int** perms, float*** lc) {
 	int miss = n, i = 0, Valrand, prev, nextV, j = 0;
 	float Vmax, Vmin;
 	float limit;
@@ -185,7 +185,7 @@ void GRASP(int **perms, float ***lc) {
 			}
 		}
 
-		limit = Vmin + (beta[0]* (Vmax - Vmin));
+		limit = Vmin + (beta[0] * (Vmax - Vmin));
 
 		for (i = 0; i < n; i++) { //Seleccion de elementos para el LCR
 			if ((*lc)[i][lcs::en] == 1) {
